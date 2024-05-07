@@ -39,27 +39,15 @@ const Form = () => {
         aggregateData(csvData);
     }, [csvData, syrups, milks, temperatures, blendeds]);
 
-
-
     return (
         <>
             <FetchCSVData onQuery={setCsvData}/>
-            {/* {csvData.length === 0 ? 'Loading...' : csvData.map((row) => {
-                return (
-                    <div key={row['Drink']}>
-                        <h1>{row['Drink']}</h1>
-                        <p>{row['Temperature']}</p>
-                        <p>{row['Syrup']}</p>
-                        <p>{row['Milk']}</p>
-                        <p>{row['Blended']}</p>
-                    </div>
-                )
-            })} */}
 
-
-            <div className='masterForm'>
+            <form className='masterForm'>
                 <div className='ingredient'>
                     <h2>Syrups</h2>
+                    <h3 id='syrup'>{syrup}</h3>
+                    <input className='guessInput' type='text' placeholder='Guess the ingredient here..' value={syrup} onChange={(e) => setSyrup(e.target.value)} />
                     {syrups.length === 0 ? 'Loading' : [...syrups].map((syrup) => {
                         return (
                             <p key={syrup}>{syrup}</p>
@@ -69,6 +57,8 @@ const Form = () => {
 
                 <div className='ingredient'>
                     <h2>Milks</h2>
+                    <h3 id='milk'>{milk}</h3>
+                    <input className='guessInput' type='text' placeholder='Guess the ingredient here..' value={milk} onChange={(e) => setMilk(e.target.value)} />
                     {milks.length === 0 ? 'Loading' : [...milks].map((milk) => {
                         return (
                             <p key={milk}>{milk}</p>
@@ -78,6 +68,8 @@ const Form = () => {
 
                 <div className='ingredient'>
                     <h2>Temperatures</h2>
+                    <h3 id='temperature'>{temperature}</h3>
+                    <input className='guessInput' type='text' placeholder='Guess the ingredient here..' value={temperature} onChange={(e) => setTemperature(e.target.value)} />
                     {temperatures.length === 0 ? 'Loading' : [...temperatures].map((temperature) => {
                         return (
                             <p key={temperature}>{temperature}</p>
@@ -87,13 +79,15 @@ const Form = () => {
 
                 <div className='ingredient'>
                     <h2>Blended</h2>
+                    <h3 id='blended'>{blended}</h3>
+                    <input className='guessInput' type='text' placeholder='Guess the ingredient here..' value={blended} onChange={(e) => setBlended(e.target.value)} />
                     {blendeds.length === 0 ? 'Loading' : [...blendeds].map((blended) => {
                         return (
                             <p key={blended}>{blended}</p>
                         )
                     })}
                 </div>
-            </div>
+            </form>
             
             
         </>
