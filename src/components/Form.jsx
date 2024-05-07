@@ -120,12 +120,9 @@ const Form = () => {
                         })}
                     </div>
                 </div>
-                
-
+                <br></br>
                 <button className='submit' type='submit'>Submit</button>
             </form>
-            
-            
         </>
     )
 }
