@@ -49,7 +49,7 @@
 #syrup, #milk, #blended, #temperature {
   padding: 0.25em;
   min-height: 2em;
-  border-radius: 0.25em;
+  border-radius: 0.5em;
   width: auto;
   margin-left: 1em;
   margin-right: 1em;
@@ -65,11 +65,25 @@
 
 .entry {
   background-color: #edce79;
-  width: auto;
-  max-width: fit-content;
+  width: 5em;
+  min-width: fit-content;
   margin-left: auto;
   margin-right: auto;
   padding: 0.5em;
   border-radius: 0.25em;
 }
 
+.drink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  margin-top: -1em;
+}
+
+#drinkName {
+  background-color: #DBC1AC;
+  width: 50%;
+  padding: 0.25em;
+  border-radius: 0.5em;
+}
