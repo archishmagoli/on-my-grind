@@ -19,7 +19,7 @@ const FetchCSVData = ({ onQuery }) => {
     }
 
     const fetchData = async () => {
-        const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vS-zgWIKx2JtERLZoePfXfSV3sSuRCtgBmeHKg8EXadSGrghf8c40BYH_6hYdiYliZwLmV2IRvS9lUE/pub?output=csv';
+        const csvUrl = '';
         try {
             const response = await axios.get(csvUrl);
             const parsedData = parseCSV(response.data);
