@@ -1,8 +1,5 @@
-# React + Vite
+# On My Grind ☕
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Wordle-inspired app that quizzes users on the ingredients of popular Starbucks drinks! 
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+I learned how to navigate user input and use [Google Sheets](https://dev.to/mursalfk/effortless-data-management-connecting-google-sheets-to-your-reactjs-project-n96) as a pseudo-database to pull drink recipes from! 
