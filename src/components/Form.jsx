@@ -14,6 +14,12 @@ const Form = () => {
     const [temperatures, setTemperatures] = useState(new Set());
     const [blendeds, setBlendeds] = useState(new Set()); // use state variables to make sure the updates persist
 
+
+    const [syrupColor, setSyrupColor] = useState('#F3F0E9');
+    const [milkColor, setMilkColor] = useState('#F3F0E9');
+    const [temperatureColor, setTemperatureColor] = useState('#F3F0E9');
+    const [blendedColor, setBlendedColor] = useState('#F3F0E9');
+
     const aggregateData = (data) => {
         const syrupList = new Set();
         const milkList = new Set();
@@ -46,7 +52,7 @@ const Form = () => {
             <form className='masterForm'>
                 <div className='ingredient'>
                     <h2>Syrups</h2>
-                    <h3 id='syrup'>{syrup}</h3>
+                    <h3 id='syrup' style={{backgroundColor: syrupColor}}>{syrup}</h3>
                     <input className='guessInput' type='text' placeholder='Guess the ingredient here..' value={syrup} onChange={(e) => setSyrup(e.target.value)} />
                     {syrups.length === 0 ? 'Loading' : [...syrups].map((syrup) => {
                         return (
@@ -57,7 +63,7 @@ const Form = () => {
 
                 <div className='ingredient'>
                     <h2>Milks</h2>
-                    <h3 id='milk'>{milk}</h3>
+                    <h3 id='milk' style={{backgroundColor: milkColor}}>{milk}</h3>
                     <input className='guessInput' type='text' placeholder='Guess the ingredient here..' value={milk} onChange={(e) => setMilk(e.target.value)} />
                     {milks.length === 0 ? 'Loading' : [...milks].map((milk) => {
                         return (
@@ -68,7 +74,7 @@ const Form = () => {
 
                 <div className='ingredient'>
                     <h2>Temperatures</h2>
-                    <h3 id='temperature'>{temperature}</h3>
+                    <h3 id='temperature' style={{backgroundColor: temperatureColor}}>{temperature}</h3>
                     <input className='guessInput' type='text' placeholder='Guess the ingredient here..' value={temperature} onChange={(e) => setTemperature(e.target.value)} />
                     {temperatures.length === 0 ? 'Loading' : [...temperatures].map((temperature) => {
                         return (
@@ -79,7 +85,7 @@ const Form = () => {
 
                 <div className='ingredient'>
                     <h2>Blended</h2>
-                    <h3 id='blended'>{blended}</h3>
+                    <h3 id='blended' style={{backgroundColor: blendedColor}}>{blended}</h3>
                     <input className='guessInput' type='text' placeholder='Guess the ingredient here..' value={blended} onChange={(e) => setBlended(e.target.value)} />
                     {blendeds.length === 0 ? 'Loading' : [...blendeds].map((blended) => {
                         return (
