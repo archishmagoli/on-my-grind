@@ -19,7 +19,7 @@ const FetchCSVData = ({ onQuery }) => {
     }
 
     const fetchData = async () => {
-        const csvUrl = '';
+        const csvUrl = import.meta.env.VITE_CSV_URL;
         try {
             const response = await axios.get(csvUrl);
             const parsedData = parseCSV(response.data);

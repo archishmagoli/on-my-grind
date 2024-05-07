@@ -29,10 +29,10 @@ const Form = () => {
 
         if (data.length !== 0) {
             data.map((row) => {  
-                syrupList.add(row['Syrup']);
-                milkList.add(row['Milk']);
-                temperatureList.add(row['Temperature']);
-                blendedList.add(row['Blended']);
+                syrupList.add(row['Syrup'].toLowerCase());
+                milkList.add(row['Milk'].toLowerCase());
+                temperatureList.add(row['Temperature'].toLowerCase());
+                blendedList.add(row['Blended'].toLowerCase());
             });
 
             setSyrups(syrupList);
@@ -49,7 +49,6 @@ const Form = () => {
     }, [csvData]);
 
     const changeDrink = () => {
-
         if (csvData.length != 0) {
             let randomIndex = Math.floor(Math.random() * csvData.length);
         
@@ -58,11 +57,60 @@ const Form = () => {
             }
 
             setDrink(csvData[randomIndex]);
+            setSyrup('');
+            setMilk('');
+            setTemperature('');
+            setBlended('');
+
+            setSyrupColor('#B87333');
+            setMilkColor('#B87333');
+            setTemperatureColor('#B87333');
+            setBlendedColor('#B87333');
         }
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        if (!syrups.has(syrup.toLowerCase())) {
+            alert('The value you entered for syrup is not in the list. Please try again.');
+        }
+
+        if (!temperatures.has(temperature.toLowerCase())) {
+            alert('The value you entered for temperature is not in the list. Please try again.');
+        }
+
+        if (!milks.has(milk.toLowerCase())) {
+            alert('The value you entered for milk is not in the list. Please try again.');
+        }
+
+        if (!blendeds.has(blended.toLowerCase())) {
+            alert('The value you entered for blended is not in the list. Please try again.');
+        }
+
+        if (syrup.toLowerCase() === drink.Syrup.toLowerCase()) {
+            setSyrupColor('#AB47BC');
+        } else {
+            setSyrupColor('#DC4C64');
+        }
+
+        if (milk.toLowerCase() === drink.Milk.toLowerCase()) {
+            setMilkColor('#AB47BC');
+        } else {
+            setMilkColor('#DC4C64');
+        }
+
+        if (temperature.toLowerCase() === drink.Temperature.toLowerCase()) {
+            setTemperatureColor('#AB47BC');
+        } else {
+            setTemperatureColor('#DC4C64');
+        }
+
+        if (blended.toLowerCase() === drink.Blended.toLowerCase()) {
+            setBlendedColor('#AB47BC');
+        } else {
+            setBlendedColor('#DC4C64');
+        }
     }
 
     return (
@@ -121,7 +169,7 @@ const Form = () => {
                     </div>
                 </div>
                 <br></br>
-                <button className='submit' type='submit'>Submit</button>
+                <button className='submit' type='submit'>Check Answer</button>
             </form>
         </>
     )
